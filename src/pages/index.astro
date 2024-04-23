@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import AssetsDisplay from '../components/AssetsDisplay.astro';
 ---
 
 <Layout title="Welcome to Astro.">
@@ -33,31 +34,69 @@ import Card from '../components/Card.astro';
 				</linearGradient>
 			</defs>
 		</svg>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
+	<h1>Welcome to <span class="text-gradient">SWTCO</span></h1>
 		<p class="instructions">
 			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+			<strong>TODO 1:</strong> Add the SWTCO logo.
 		</p>
 		<ul role="list" class="link-card-grid">
 			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
+				title="Logo"
+				body="Where should we put it? 🤔"
 			/>
 			<Card
 				href="https://astro.build/integrations/"
 				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
+				body="Storyblok might be a useful library. I'll install it and play around with it."
 			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
+		</ul>
+		<p class="instructions">
+			Displaying the images from <code>/assets</code> for this project:<br />			
+		</p>
+		<ul role="list" class="link-card-grid">
+			<AssetsDisplay
+				title="LOGO Swt Co horizontal.svg"			
+				imageSrc="/assets/LOGO Swt Co horizontal.svg"
 			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
+			<AssetsDisplay
+				title="LOGO Swt Co patch.svg"			
+				imageSrc="/assets/LOGO Swt Co patch.svg"
+			/>
+			<AssetsDisplay
+				title="LOGO Swt Co.svg"			
+				imageSrc="/assets/LOGO Swt Co.svg"
+			/>
+			<AssetsDisplay
+				title="Logo_vertical.jpg"			
+				imageSrc="/assets/Logo_vertical.jpg"
+			/>
+			<AssetsDisplay
+				title="Logo_vertical.png"			
+				imageSrc="/assets/Logo_vertical.png"
+			/>
+			<AssetsDisplay
+				title="New_Logo.jpeg"			
+				imageSrc="/assets/New_Logo.jpeg"
+			/>
+			<AssetsDisplay
+				title="swt-co-cover_4.jpg"			
+				imageSrc="/assets/swt-co-cover_4.jpg"
+			/>
+			<AssetsDisplay
+				title="swt-co-cover.jpg"			
+				imageSrc="/assets/swt-co-cover.jpg"
+			/>
+			<AssetsDisplay
+				title="swtco_cover_3.jpg"			
+				imageSrc="/assets/swtco_cover_3.jpg"
+			/>
+			<AssetsDisplay
+				title="swtco_cover_300dpi.jpg"			
+				imageSrc="/assets/swtco_cover_300dpi.jpg"
+			/>
+			<AssetsDisplay
+				title="swtco-cover_2.jpg"			
+				imageSrc="/assets/swtco-cover_2.jpg"
 			/>
 		</ul>
 	</main>
