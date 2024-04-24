@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "A simple landing page built with 11ty and Tailwind CSS",
   "scripts": {
+    "build": "eleventy",
     "serve": "ELEVENTY_ENV=dev eleventy --serve",
     "deploy": "eleventy",
     "deploy-pgs": "ELEVENTY_ENV=pages eleventy"
