@@ -1,18 +1,18 @@
-const htmlmin = require("html-minifier");
+const htmlmin = require('html-minifier');
 const markdownIt = require('markdown-it');
-const pluginRss = require("@11ty/eleventy-plugin-rss");
+const pluginRss = require('@11ty/eleventy-plugin-rss');
 
-const isPages = process.env.ELEVENTY_ENV === 'pages'
-const outDir = isPages ? 'docs' : 'public'
+const isPages = process.env.ELEVENTY_ENV === 'pages';
+const outDir = isPages ? 'docs' : 'public';
 
 module.exports = function (eleventyConfig) {
   // PLUGINS
   eleventyConfig.addPlugin(pluginRss);
 
   // shortcode to render markdown from string => {{ STRING | markdown | safe }}
-  eleventyConfig.addFilter('markdown', function(value) {
+  eleventyConfig.addFilter('markdown', function (value) {
     let markdown = require('markdown-it')({
-      html: true
+      html: true,
     });
     return markdown.render(value);
   });
@@ -27,9 +27,9 @@ module.exports = function (eleventyConfig) {
       html: true,
       breaks: true,
       linkify: true,
-      typographer: true
+      typographer: true,
     })
-  )
+  );
 
   //create collections
   eleventyConfig.addCollection('sections', async (collection) => {
@@ -40,12 +40,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ './src/static/': '/' });
 
   // TRANSFORM -- Minify HTML Output
-  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-    if( outputPath && outputPath.endsWith(".html") ) {
+  eleventyConfig.addTransform('htmlmin', function (content, outputPath) {
+    if (outputPath && outputPath.endsWith('.html')) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
       });
       return minified;
     }
@@ -58,13 +58,9 @@ module.exports = function (eleventyConfig) {
       output: outDir,
       data: './_data',
       includes: './_includes',
-      layouts: './_layouts'
+      layouts: './_layouts',
     },
-    templateFormats: [
-      'md',
-      'njk',
-      '11ty.js'
-    ],
-    htmlTemplateEngine: 'njk'
+    templateFormats: ['md', 'njk', '11ty.js'],
+    htmlTemplateEngine: 'njk',
   };
 };
