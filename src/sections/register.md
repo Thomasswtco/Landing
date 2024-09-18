@@ -1,6 +1,8 @@
 ---
-title: Registration
+title: What's next?
 type: register
 ---
 
-Maecenas pulvinar ultricies dolor, vitae sagittis nunc aliquam non. Cras vitae eros mi.
+Leave us your address if you want to keep in touch with us and get informed about our next release!
+
+You can also contact us at contact@swtco.de
